@@ -1,33 +1,43 @@
 body{
- background-color: black
-};
-
-/* Coding for stars */
-.viewport {
- position: fixed;
- inset: 0;
- overflow: auto;
- background: #000;
- cursor: grab;
- overscroll-behavior:none;
+  width: 5000px;
+  height: 5000px;
+  background:  url(twinkling_stars.gif) repeat;
+  background-size: 200px 200px; /* scale tile up, optional */
+}
+/* sun */
+.sun {
+  position: absolute;
+  top: 1000px;   /* place anywhere in your 5000x5000 world */
+  left: 2500px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%,
+  #fff700 0%,   /* bright yellow center */
+  #ff8c00 70%,  /* orange mid-layer */
+  #ff0000 100%  /* red edge */
+  );
+  box-shadow: 
+  0 0 150px 80px rgba(255, 200, 0, 0.6),
+  0 0 300px 120px rgba(255, 150, 0, 0.4);
 }
 
-.viewport:active {cursor: grabbing;}
-
-.world {
-    width: 5000px;
-    height: 5000px;
-    background: #000;
+@keyframes sunPulse {
+  0%, 100% { box-shadow: 0 0 150px 80px rgba(255,200,0,0.6); }
+  50% { box-shadow: 0 0 200px 100px rgba(255,170,0,0.8); }
 }
 
-#stars{
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    pointer-events: none;
-    z-index: 0;
+.sun {
+  position: absolute;
+  top: 1000px;
+  left: 2500px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%,
+   #fff700 0%,
+   #ff8c00 70%,
+   #ff0000 100%);
+  animation: sunPulse 3s infinite ease-in-out;
 }
-
-.world > *:not(#stars) { position: relative; z-index: 1; }
+/* Orbit base */
