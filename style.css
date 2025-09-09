@@ -1,43 +1,67 @@
-body{
+body {
   width: 5000px;
   height: 5000px;
-  background:  url(twinkling_stars.gif) repeat;
+  background: url(twinkling_stars.gif) repeat;
   background-size: 200px 200px; /* scale tile up, optional */
 }
 /* sun */
 .sun {
   position: absolute;
-  top: 1000px;   /* place anywhere in your 5000x5000 world */
+  top: 2000px; /* place anywhere in your 5000x5000 world */
   left: 2500px;
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%,
-  #fff700 0%,   /* bright yellow center */
-  #ff8c00 70%,  /* orange mid-layer */
-  #ff0000 100%  /* red edge */
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fff700 0%,
+    /* bright yellow center */ #ff8c00 70%,
+    /* orange mid-layer */ #ff0000 100% /* red edge */
   );
-  box-shadow: 
-  0 0 150px 80px rgba(255, 200, 0, 0.6),
-  0 0 300px 120px rgba(255, 150, 0, 0.4);
+  box-shadow: 0 0 150px 80px rgba(255, 200, 0, 0.6),
+    0 0 300px 120px rgba(255, 150, 0, 0.4);
 }
 
 @keyframes sunPulse {
-  0%, 100% { box-shadow: 0 0 150px 80px rgba(255,200,0,0.6); }
-  50% { box-shadow: 0 0 200px 100px rgba(255,170,0,0.8); }
+  0%,
+  100% {
+    box-shadow: 0 0 150px 80px rgba(255, 200, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 200px 100px rgba(255, 170, 0, 0.8);
+  }
 }
 
 .sun {
   position: absolute;
-  top: 1000px;
-  left: 2500px;
+  top: 2000px;
+  left: 2300px;
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%,
-   #fff700 0%,
-   #ff8c00 70%,
-   #ff0000 100%);
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fff700 0%,
+    #ff8c00 70%,
+    #ff0000 100%
+  );
   animation: sunPulse 3s infinite ease-in-out;
 }
-/* Orbit base */
+/* Mercury */
+.mercury-orbit {
+  width: 700px;
+  height: 700px;
+  margin-left: -250px;
+  margin-top: -550px;
+  border: 2px dashed white; /* visible border */
+  border-radius: 50%;
+  position: absolute;
+  top: 2500px;
+  left: 2500px;
+  animation: spin 10s linear infinite;
+}
+.mercury {
+  width: 12px;
+  height: 12px;
+  background: gray;
+}
