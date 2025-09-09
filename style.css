@@ -49,19 +49,29 @@ body {
 }
 /* Mercury */
 .mercury-orbit {
-  width: 700px;
-  height: 700px;
-  margin-left: -250px;
-  margin-top: -550px;
-  border: 2px dashed white; /* visible border */
+  width: 1000px;
+  height: 1000px;
+  margin-left: -395px;
+  margin-top: -700px;
+  border: 2px solid white; /* visible border */
   border-radius: 50%;
   position: absolute;
   top: 2500px;
   left: 2500px;
   animation: spin 10s linear infinite;
+  transform-origin: center;;
 }
 .mercury {
-  width: 12px;
-  height: 12px;
+  width: 50px;
+  height: 50px;
   background: gray;
+  border-radius: 50%;
+  top: 50%; left: 97.5%;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+@keyframes spin {
+  from {transform: rotate(0deg);}
+  to { transform: rotate(360deg);}
 }
