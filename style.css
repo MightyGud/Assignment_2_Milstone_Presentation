@@ -62,6 +62,20 @@ body {
   left: 2500px;
   animation: spin 10s linear infinite;
   transform-origin: center;
+  cursor: pointer;
+}
+.mercury-space {
+  width: 850px;
+  height: 850px;
+  margin-left: -320px;
+  margin-top: -630px;
+  border: 2px solid transparent; /* invisible border */
+  border-radius: 50%;
+  position: absolute;
+  top: 2500px;
+  left: 2500px;
+  animation: spin 10s linear infinite;
+  transform-origin: center;
 }
 .mercury {
   width: 50px;
