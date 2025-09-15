@@ -1,5 +1,5 @@
-      // Create a synth
-      const synth = new Tone.Synth().toDestination();
+// Create a synth
+ const synth = new Tone.Synth().toDestination();
 
       // Select planet element
       const mercury = document.querySelector(".mercury");
@@ -21,55 +21,61 @@
 
       earth.addEventListener("click",async() => {
         await Tone.start();
-        console.log("Venus clicked!");
+        console.log("Earth clicked!");
         synth.triggerAttackRelease("E4","8n");
       });
+// Mercury
+ let isDragging = false;
+ let dragTimeout;
+ let originalOrbit = mercury.parentElement;
 
-      // dragging mercury
+ // Mouse down
+ mercury.addEventListener("mousedown", async () => {
+   await Tone.start();
 
-      let isDragging = false;
-      let hasDragged = false;
-      let startX = 0;
-      let startY = 0;
-      let originalOrbit = mercury.parentElement;
-    
+  // Not dragging yet
+  isDragging = false;
 
-      // When mouse is pressed down on Mercury
-      mercury.addEventListener("mousedown", async () => {
-      await Tone.start();
-      isDragging = true;
-      hasDragged = false;
-      startX = e.clientX;
-      startY = e.clientY;
-      
-      mercury.classList.add("dragging"); // apply grabbing cursor
-      // Pause the orbit while dragging
-      originalOrbit.style.animationPlayState = "paused";
-      synth.triggerAttackRelease("C4", "8n");
-      mercury.style.position = "fixed";
-      });
-      
-      // When mouse is released
-       document.addEventListener("mouseup", () => {
-       isDragging = false;
-       mercury.classList.remove("dragging"); // back to normal
-       //Reset Mercury back to the Orbit;
-       mercury.style.left ="";
-       mercury.style.top ="";
-       mercury.style.transform = "";
-       originalOrbit.style.animationPlayState = "running";
-      });
+  mercury.classList.add("dragging");
+  originalOrbit.style.animationPlayState = "paused";
+  mercury.style.position = "fixed";
 
-      // While moving with hold
-      document.addEventListener("mousemove", (e) => {
-      if (isDragging) {
-      mercury.style.left = e.clientX - mercury.offsetWidth / 2 + "px";
-      mercury.style.top = e.clientY - mercury.offsetHeight / 2 + "px";
+   // If held long enough, start dragging
+  dragTimeout = setTimeout(() => {
+     isDragging = true;
+  }, 250); // 250ms hold → start drag mode
+ });
 
-      let freq = 200 + Math.random() * 600;
-      synth.triggerAttackRelease(freq, "8n");
-       }
-      });
+ // Mouse up
+ document.addEventListener("mouseup", () => {
+   clearTimeout(dragTimeout);
+
+  if (!isDragging) {
+     // CLICK only
+     synth.triggerAttackRelease("C4", "8n");
+   }
+
+   isDragging = false;
+   mercury.classList.remove("dragging");
+
+   // Reset Mercury
+   mercury.style.left = "";
+   mercury.style.top = "";
+  mercury.style.transform = "";
+   originalOrbit.style.animationPlayState = "running";
+ });
+
+// Mouse move
+ document.addEventListener("mousemove", (e) => {
+   if (isDragging) {
+     mercury.style.left = e.clientX - mercury.offsetWidth / 2 + "px";
+    mercury.style.top = e.clientY - mercury.offsetHeight / 2 + "px";
+
+    let freq = 200 + Math.random() * 600;
+    synth.triggerAttackRelease(freq, "8n");
+   }
+ });
+
 
 
     
