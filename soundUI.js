@@ -26,7 +26,6 @@
       });
 // Mercury
  let isDragging = false;
- let dragTimeout;
  let originalOrbit = mercury.parentElement;
 
  // Mouse down
@@ -61,7 +60,7 @@
    // Reset Mercury
    mercury.style.left = "";
    mercury.style.top = "";
-  mercury.style.transform = "";
+   mercury.style.transform = "";
    originalOrbit.style.animationPlayState = "running";
  });
 
@@ -75,6 +74,8 @@
     synth.triggerAttackRelease(freq, "8n");
    }
  });
+
+
 
 
 
