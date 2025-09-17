@@ -64,6 +64,7 @@ body {
   cursor: crosshair;
   pointer-events: auto;
   z-index: 30;
+  background-color: #fff700;
 }
 .mercury {
   width: 40px;
@@ -111,6 +112,7 @@ body {
   cursor: crosshair;
   pointer-events: auto;
   z-index: 20;
+  background-color: #ff0000fe;
 }
 
 .venus {
@@ -164,7 +166,7 @@ body {
 .earth {
   width: 150px;
   height: 150px;
-  background-color: lightblue; 
+  background-color: lightblue;
   border-radius: 50%;
   top: 50%;
   left: 97%;
@@ -198,14 +200,13 @@ body {
 /* Pluto */
 /* Coord's mouse */
 #coords {
-      position: fixed;
-      top: 30px;
-      left: 30px;
-      background: rgba(43, 255, 0, 0.7);
-      padding: 50px 50px;
-      border: 5px solid lime;
-      border-radius: 5px;
-      color: white;
-      z-index: 50;
-    };
-
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  background: rgba(43, 255, 0, 0.7);
+  padding: 50px 50px;
+  border: 5px solid lime;
+  border-radius: 5px;
+  color: white;
+  z-index: 50;
+}
