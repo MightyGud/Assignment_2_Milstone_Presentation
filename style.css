@@ -64,7 +64,6 @@ body {
   cursor: crosshair;
   pointer-events: auto;
   z-index: 30;
-  background-color: #fff700;
 }
 .mercury {
   width: 40px;
@@ -112,7 +111,6 @@ body {
   cursor: crosshair;
   pointer-events: auto;
   z-index: 20;
-  background-color: #ff0000fe;
 }
 
 .venus {
