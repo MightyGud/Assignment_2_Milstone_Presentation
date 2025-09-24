@@ -1,7 +1,12 @@
 body {
   background: url(twinkling_stars.gif) repeat;
 }
-
+#title {
+  color: white;
+}
+.info {
+  color: white;
+}
 .box-1 {
   background-color: white;
 }
@@ -23,4 +28,8 @@ body {
 
 .box-6 {
   background-color: white;
+}
+
+.image {
+  width: fit-content;
 }
