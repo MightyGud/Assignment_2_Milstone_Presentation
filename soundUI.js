@@ -24,7 +24,7 @@ earth.addEventListener("click", () => {
 // Mercury
 let isDragging = false;
 let originalOrbit = mercury.parentElement;
-
+let dragTimeout;
 // Mouse down
 mercury.addEventListener("mousedown", () => {
   // Not dragging yet

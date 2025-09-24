@@ -59,7 +59,7 @@ body {
   position: absolute;
   top: 2500px;
   left: 2500px;
-  animation: spin 20s linear infinite;
+  /* animation: spin 20s linear infinite; */
   transform-origin: center;
   cursor: crosshair;
   pointer-events: auto;
@@ -106,7 +106,7 @@ body {
   position: absolute;
   top: 2500px;
   left: 2500px;
-  animation: spin 20s linear infinite;
+  /* animation: spin 20s linear infinite; */
   transform-origin: center;
   cursor: crosshair;
   pointer-events: auto;
@@ -154,7 +154,7 @@ body {
   position: absolute;
   top: 2500px;
   left: 2500px;
-  animation: spin 20s linear infinite;
+  /* animation: spin 20s linear infinite; */
   transform-origin: center;
   cursor: crosshair;
   pointer-events: auto;
