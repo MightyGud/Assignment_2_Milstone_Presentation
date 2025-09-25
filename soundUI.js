@@ -21,51 +21,51 @@ earth.addEventListener("click", () => {
   console.log("Earth clicked!");
   synth.triggerAttackRelease("E4", "8n");
 });
-// Mercury
-let isDragging = false;
-let originalOrbit = mercury.parentElement;
-let dragTimeout;
-// Mouse down
-mercury.addEventListener("mousedown", () => {
-  // Not dragging yet
-  isDragging = false;
+// // Mercury
+// let isDragging = false;
+// let originalOrbit = mercury.parentElement;
+// let dragTimeout;
+// // Mouse down
+// mercury.addEventListener("mousedown", () => {
+//   // Not dragging yet
+//   isDragging = false;
 
-  mercury.classList.add("dragging");
-  originalOrbit.style.animationPlayState = "paused";
-  mercury.style.position = "fixed";
+//   mercury.classList.add("dragging");
+//   originalOrbit.style.animationPlayState = "paused";
+//   mercury.style.position = "fixed";
 
-  // If held long enough, start dragging
-  dragTimeout = setTimeout(() => {
-    isDragging = true;
-  }, 250); // 250ms hold → start drag mode
-});
+//   // If held long enough, start dragging
+//   dragTimeout = setTimeout(() => {
+//     isDragging = true;
+//   }, 250); // 250ms hold → start drag mode
+// });
 
-// Mouse up
-document.addEventListener("mouseup", () => {
-  clearTimeout(dragTimeout);
+// // Mouse up
+// document.addEventListener("mouseup", () => {
+//   clearTimeout(dragTimeout);
 
-  if (!isDragging) {
-    // CLICK only
-    synth.triggerAttackRelease("C4", "8n");
-  }
+//   if (!isDragging) {
+//     // CLICK only
+//     synth.triggerAttackRelease("C4", "8n");
+//   }
 
-  isDragging = false;
-  mercury.classList.remove("dragging");
+//   isDragging = false;
+//   mercury.classList.remove("dragging");
 
-  // Reset Mercury
-  mercury.style.left = "";
-  mercury.style.top = "";
-  mercury.style.transform = "";
-  originalOrbit.style.animationPlayState = "running";
-});
+//   // Reset Mercury
+//   mercury.style.left = "";
+//   mercury.style.top = "";
+//   mercury.style.transform = "";
+//   originalOrbit.style.animationPlayState = "running";
+// });
 
-// Mouse move
-document.addEventListener("mousemove", (e) => {
-  if (isDragging) {
-    mercury.style.left = e.clientX - mercury.offsetWidth / 2 + "px";
-    mercury.style.top = e.clientY - mercury.offsetHeight / 2 + "px";
+// // Mouse move
+// document.addEventListener("mousemove", (e) => {
+//   if (isDragging) {
+//     mercury.style.left = e.clientX - mercury.offsetWidth / 2 + "px";
+//     mercury.style.top = e.clientY - mercury.offsetHeight / 2 + "px";
 
-    let freq = 200 + Math.random() * 600;
-    synth.triggerAttackRelease(freq, "8n");
-  }
-});
+//     let freq = 200 + Math.random() * 600;
+//     synth.triggerAttackRelease(freq, "8n");
+//   }
+// });

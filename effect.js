@@ -5,3 +5,4 @@ const coordsDiv = document.getElementById("coords");
       let y = event.clientY; // mouse Y inside the window
       coordsDiv.textContent = `X: ${x}, Y: ${y}`;
     });
+
