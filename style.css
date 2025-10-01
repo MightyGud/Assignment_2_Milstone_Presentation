@@ -21,6 +21,7 @@ body {
   );
   box-shadow: 0 0 150px 80px rgba(255, 200, 0, 0.6),
     0 0 300px 120px rgba(255, 150, 0, 0.4);
+  z-index: -50
 }
 
 @keyframes sunPulse {
@@ -56,10 +57,10 @@ body {
   margin-top: -700px;
   border: 2px dashed white; /* visible border */
   border-radius: 50%;
-  position: absolute;
+  position: relative;
   top: 2500px;
   left: 2500px;
-  /* animation: spin 20s linear infinite; */
+   animation: spin 20s linear infinite;  
   transform-origin: center;
   cursor: crosshair;
   pointer-events: auto;
