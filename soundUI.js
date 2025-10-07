@@ -305,23 +305,23 @@ function earthMouseUp() {
 let fourthOrbit = mars.parentElement;
 let marsStartX = 0, marsStartY = 0;
 
-mars.addEventListener("mousedown", earthMouseDown);
+mars.addEventListener("mousedown", marsMouseDown);
 
-function earthMouseDown(e) {
+function marsMouseDown(e) {
   marsStartX = e.clientX;
   marsStartY = e.clientY;
 
-  document.addEventListener("mousemove", earthMouseMove);
-  document.addEventListener("mouseup", earthMouseUp);
+  document.addEventListener("mousemove", marsMouseMove);
+  document.addEventListener("mouseup", marsMouseUp);
   fourthOrbit.style.animationPlayState = "paused";
 }
 
-function earthMouseMove(e) {
-  let newX = earthStartX - e.clientX;
-  let newY = earthStartY - e.clientY;
+function marsMouseMove(e) {
+  let newX = marsStartX - e.clientX;
+  let newY = marsStartY - e.clientY;
 
-  earthStartX = e.clientX;
-  earthStartY = e.clientY;
+  marsStartX = e.clientX;
+  marsStartY = e.clientY;
 
   mars.style.top = mars.offsetTop - newY + "px";
   mars.style.left = mars.offsetLeft - newX + "px";
@@ -330,8 +330,8 @@ function earthMouseMove(e) {
   synth.triggerAttackRelease(freq, "8n");
 }
 
-function earthMouseUp() {
-  document.removeEventListener("mousemove", earthMouseMove);
+function marsMouseUp() {
+  document.removeEventListener("mousemove", marsMouseMove);
   mars.style.left = "";
   mars.style.top = "";
   mars.style.transform = "";
