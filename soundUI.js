@@ -9,9 +9,7 @@ const mars = document.querySelector("#Mars");
 const jupiter = document.querySelector("#Jupiter");
 const saturn = document.querySelector("#Saturn");
 const uranus = document.querySelector("#Uranus");
-const neptune = document.querySelector("#Neptune")
-
-
+const neptune = document.querySelector("#Neptune");
 
 // Add click event
 mercury.addEventListener("click", () => {
@@ -53,9 +51,6 @@ neptune.addEventListener("click", () => {
   console.log("Neptune clicked!");
   synth.triggerAttackRelease("G4", "8n");
 });
-
-
-
 
 // this doesn't work really well since i made a whole mess of this function.
 // Mercury
@@ -106,7 +101,6 @@ neptune.addEventListener("click", () => {
 //     synth.triggerAttackRelease(freq, "8n");
 //   }
 // });
-
 
 //This function did work, but for somereason it can't be used for another planet.
 
@@ -192,7 +186,8 @@ neptune.addEventListener("click", () => {
 //I called the X and Y out individually for all the planets because the variables are redeclaring.
 // MERCURY
 let originalOrbit = mercury.parentElement;
-let mercuryStartX = 0, mercuryStartY = 0;
+let mercuryStartX = 0,
+  mercuryStartY = 0;
 
 mercury.addEventListener("mousedown", mercuryMouseDown);
 
@@ -229,7 +224,8 @@ function mercuryMouseUp() {
 
 // VENUS
 let secondOrbit = venus.parentElement;
-let venusStartX = 0, venusStartY = 0;
+let venusStartX = 0,
+  venusStartY = 0;
 
 venus.addEventListener("mousedown", venusMouseDown);
 
@@ -266,7 +262,8 @@ function venusMouseUp() {
 
 //Earth
 let thirdOrbit = earth.parentElement;
-let earthStartX = 0, earthStartY = 0;
+let earthStartX = 0,
+  earthStartY = 0;
 
 earth.addEventListener("mousedown", earthMouseDown);
 
@@ -303,7 +300,8 @@ function earthMouseUp() {
 
 //Mars
 let fourthOrbit = mars.parentElement;
-let marsStartX = 0, marsStartY = 0;
+let marsStartX = 0,
+  marsStartY = 0;
 
 mars.addEventListener("mousedown", marsMouseDown);
 
@@ -336,4 +334,158 @@ function marsMouseUp() {
   mars.style.top = "";
   mars.style.transform = "";
   fourthOrbit.style.animationPlayState = "running";
+}
+
+//Jupiter
+
+let fifthOrbit = jupiter.parentElement;
+let jupiterStartX = 0,
+  jupiterStartY = 0;
+
+jupiter.addEventListener("mousedown", jupiterMouseDown);
+
+function jupiterMouseDown(e) {
+  jupiterStartX = e.clientX;
+  jupiterStartY = e.clientY;
+
+  document.addEventListener("mousemove", jupiterMouseMove);
+  document.addEventListener("mouseup", jupiterMouseUp);
+  fifthOrbit.style.animationPlayState = "paused";
+}
+
+function jupiterMouseMove(e) {
+  let newX = jupiterStartX - e.clientX;
+  let newY = jupiterStartY - e.clientY;
+
+  jupiterStartX = e.clientX;
+  jupiterStartY = e.clientY;
+
+  jupiter.style.top = jupiter.offsetTop - newY + "px";
+  jupiter.style.left = jupiter.offsetLeft - newX + "px";
+
+  let freq = 200 + Math.random() * 600;
+  synth.triggerAttackRelease(freq, "8n");
+}
+
+function jupiterMouseUp() {
+  document.removeEventListener("mousemove", jupiterMouseMove);
+  jupiter.style.left = "";
+  jupiter.style.top = "";
+  jupiter.style.transform = "";
+  fifthOrbit.style.animationPlayState = "running";
+}
+// Saturn
+let sixthOrbit = saturn.parentElement;
+let saturnStartX = 0,
+  saturnStartY = 0;
+
+saturn.addEventListener("mousedown", saturnMouseDown);
+
+function saturnMouseDown(e) {
+  saturnStartX = e.clientX;
+  saturnStartY = e.clientY;
+
+  document.addEventListener("mousemove", saturnMouseMove);
+  document.addEventListener("mouseup", saturnMouseUp);
+  sixthOrbit.style.animationPlayState = "paused";
+}
+
+function saturnMouseMove(e) {
+  let newX = saturnStartX - e.clientX;
+  let newY = saturnStartY - e.clientY;
+
+  saturnStartX = e.clientX;
+  saturnStartY = e.clientY;
+
+  saturn.style.top = saturn.offsetTop - newY + "px";
+  saturn.style.left = saturn.offsetLeft - newX + "px";
+
+  let freq = 200 + Math.random() * 600;
+  synth.triggerAttackRelease(freq, "8n");
+}
+
+function saturnMouseUp() {
+  document.removeEventListener("mousemove", saturnMouseMove);
+  saturn.style.left = "";
+  saturn.style.top = "";
+  saturn.style.transform = "";
+  sixthOrbit.style.animationPlayState = "running";
+}
+
+//Uranus
+
+let seventhOrbit = uranus.parentElement;
+let uranusStartX = 0,
+  uranusStartY = 0;
+
+uranus.addEventListener("mousedown", uranusMouseDown);
+
+function uranusMouseDown(e) {
+  uranusStartX = e.clientX;
+  uranusStartY = e.clientY;
+
+  document.addEventListener("mousemove", uranusMouseMove);
+  document.addEventListener("mouseup", uranusMouseUp);
+  seventhOrbit.style.animationPlayState = "paused";
+}
+
+function uranusMouseMove(e) {
+  let newX = uranusStartX - e.clientX;
+  let newY = uranusStartY - e.clientY;
+
+  uranusStartX = e.clientX;
+  uranusStartY = e.clientY;
+
+  uranus.style.top = uranus.offsetTop - newY + "px";
+  uranus.style.left = uranus.offsetLeft - newX + "px";
+
+  let freq = 200 + Math.random() * 600;
+  synth.triggerAttackRelease(freq, "8n");
+}
+
+function uranusMouseUp() {
+  document.removeEventListener("mousemove", uranusMouseMove);
+  uranus.style.left = "";
+  uranus.style.top = "";
+  uranus.style.transform = "";
+  seventhOrbit.style.animationPlayState = "running";
+}
+
+//Neptune
+
+let eightOrbit = neptune.parentElement;
+let neptuneStartX = 0,
+  neptuneStartY = 0;
+
+neptune.addEventListener("mousedown", neptuneMouseDown);
+
+function neptuneMouseDown(e) {
+  neptuneStartX = e.clientX;
+  neptuneStartY = e.clientY;
+
+  document.addEventListener("mousemove", neptuneMouseMove);
+  document.addEventListener("mouseup", neptuneMouseUp);
+  eightOrbit.style.animationPlayState = "paused";
+}
+
+function neptuneMouseMove(e) {
+  let newX = neptuneStartX - e.clientX;
+  let newY = neptuneStartY - e.clientY;
+
+  neptuneStartX = e.clientX;
+  neptuneStartY = e.clientY;
+
+  neptune.style.top = neptune.offsetTop - newY + "px";
+  neptune.style.left = neptune.offsetLeft - newX + "px";
+
+  let freq = 200 + Math.random() * 600;
+  synth.triggerAttackRelease(freq, "8n");
+}
+
+function neptuneMouseUp() {
+  document.removeEventListener("mousemove", neptuneMouseMove);
+  neptune.style.left = "";
+  neptune.style.top = "";
+  neptune.style.transform = "";
+  eightOrbit.style.animationPlayState = "running";
 }

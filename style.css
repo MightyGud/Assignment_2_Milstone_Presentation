@@ -21,7 +21,7 @@ body {
   );
   box-shadow: 0 0 150px 80px rgba(255, 200, 0, 0.6),
     0 0 300px 120px rgba(255, 150, 0, 0.4);
-  z-index: -50
+  z-index: -50;
 }
 
 @keyframes sunPulse {
@@ -39,12 +39,12 @@ body {
   height: 1000px;
   margin-left: -700px;
   margin-top: -700px;
-  border: 2px dashed white; 
+  border: 2px dashed white;
   border-radius: 50%;
   position: relative;
   top: 5500px;
   left: 5500px;
-   animation: spin 20s linear infinite;  
+  animation: spin 30s linear infinite;
   transform-origin: center;
   cursor: crosshair;
   pointer-events: auto;
@@ -86,12 +86,12 @@ body {
   height: 1500px;
   margin-left: -950px;
   margin-top: -900px;
-  border: 2px dashed white; 
+  border: 2px dashed white;
   border-radius: 50%;
   position: absolute;
   top: 5500px;
   left: 5500px;
-  animation: spin 20s linear infinite;
+  animation: spin 30s linear infinite;
   transform-origin: center;
   cursor: crosshair;
   pointer-events: auto;
@@ -134,12 +134,12 @@ body {
   height: 2000px;
   margin-left: -1200px;
   margin-top: -1150px;
-  border: 2px dashed white; 
+  border: 2px dashed white;
   border-radius: 50%;
   position: absolute;
   top: 5500px;
   left: 5500px;
-  animation: spin 20s linear infinite;
+  animation: spin 30s linear infinite;
   transform-origin: center;
   cursor: crosshair;
   pointer-events: auto;
@@ -181,12 +181,12 @@ body {
   height: 2500px;
   margin-left: -1450px;
   margin-top: -1400px;
-  border: 2px dashed white; 
+  border: 2px dashed white;
   border-radius: 50%;
   position: absolute;
   top: 5500px;
   left: 5500px;
-  /* animation: spin 20s linear infinite; */
+  animation: spin 30s linear infinite;
   transform-origin: center;
   cursor: crosshair;
   pointer-events: auto;
@@ -228,12 +228,12 @@ body {
   height: 3000px;
   margin-left: -1700px;
   margin-top: -1650px;
-  border: 2px dashed white; 
+  border: 2px dashed white;
   border-radius: 50%;
   position: absolute;
   top: 5500px;
   left: 5500px;
-  /* animation: spin 20s linear infinite; */
+  animation: spin 30s linear infinite;
   transform-origin: center;
   cursor: crosshair;
   pointer-events: auto;
@@ -275,12 +275,12 @@ body {
   height: 3550px;
   margin-left: -1950px;
   margin-top: -1890px;
-  border: 2px dashed white; 
+  border: 2px dashed white;
   border-radius: 50%;
   position: absolute;
   top: 5500px;
   left: 5500px;
-  /* animation: spin 20s linear infinite; */
+  animation: spin 30s linear infinite;
   transform-origin: center;
   cursor: crosshair;
   pointer-events: auto;
@@ -322,12 +322,12 @@ body {
   height: 4050px;
   margin-left: -2200px;
   margin-top: -2090px;
-  border: 2px dashed white; 
+  border: 2px dashed white;
   border-radius: 50%;
   position: absolute;
   top: 5500px;
   left: 5500px;
-  /* animation: spin 20s linear infinite; */
+  animation: spin 30s linear infinite;
   transform-origin: center;
   cursor: crosshair;
   pointer-events: auto;
@@ -369,12 +369,12 @@ body {
   height: 4550px;
   margin-left: -2500px;
   margin-top: -2290px;
-  border: 2px dashed white; 
+  border: 2px dashed white;
   border-radius: 50%;
   position: absolute;
   top: 5500px;
   left: 5500px;
-  /* animation: spin 20s linear infinite; */
+  animation: spin 30s linear infinite;
   transform-origin: center;
   cursor: crosshair;
   pointer-events: auto;
