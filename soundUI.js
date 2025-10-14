@@ -39,17 +39,17 @@ jupiter.addEventListener("click", () => {
 
 saturn.addEventListener("click", () => {
   console.log("Saturn clicked!");
-  synth.triggerAttackRelease("G4", "8n");
+  synth.triggerAttackRelease("A5", "8n");
 });
 
 uranus.addEventListener("click", () => {
   console.log("Uranus clicked!");
-  synth.triggerAttackRelease("G4", "8n");
+  synth.triggerAttackRelease("B5", "8n");
 });
 
 neptune.addEventListener("click", () => {
   console.log("Neptune clicked!");
-  synth.triggerAttackRelease("G4", "8n");
+  synth.triggerAttackRelease("C5", "8n");
 });
 
 // this doesn't work really well since i made a whole mess of this function.
